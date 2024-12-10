@@ -82,7 +82,7 @@ body {
     
     width: 0px;
     height: 100px;
-    background: var(--color-pink);
+    background:#6666ff;
 
     animation: written-text-box .5s ease;
     animation-delay: .5s;
@@ -151,8 +151,8 @@ body {
 .stacks ul li div:hover::after{
     content: attr(data);
     position: absolute;
-    top: 8px;
-    left: 25px;
+    top: 82px;
+    left: 24px;
 
     width: 20px;
     height: 20px;
