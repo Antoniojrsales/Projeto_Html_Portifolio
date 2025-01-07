@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;700&display=swap');
+
+:root{
+    --main-color:#00eeff;
+    --text-color-white:#ffffff;
+    --text-color-black:#000000;
+    --bg-color-01:#999999;
+    --color-00:#0000001a;
+
+    --color-02:#009539;
+    --color-03:#7950f2;
+    --color-04:#c00000;
+    --color-05:#232323;
+}
+
+*{
+    margin: 0; /* Remove todas as margens externas padrão dos elementos */
+    padding: 0; /* Remove todos os preenchimentos internos padrão dos elementos */
+    box-sizing: border-box; /* Define o modelo de caixa para incluir bordas e preenchimentos dentro da largura/altura */
+    text-decoration: none;/* Remove sublinhados ou outros estilos decorativos padrão dos textos (como em links) */
+    border: none; /* Remove bordas padrão de elementos como botões ou campos de entrada */
+    scroll-behavior: smooth; /* Torna o comportamento de rolagem mais suave, ideal para âncoras e navegações */
+}
+
+/* Estilos globais */
+html {
+    font-family: 'Poppins', sans-serif; /* Define a fonte principal do documento */
+    font-size: 16px; /* Define o tamanho base da fonte */
+}
+
+body {
+    background-color: var(--bg-color-01); /* Cor de fundo do corpo */
+    color: var(--text-color-white); /* Cor do texto principal */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Garante que 100% de altura funcione corretamente */
+}
+
+
+/* Header */
+header {
+    position: fixed; /* Mantém o cabeçalho fixo no topo da página */
+    width: 100%; /* O cabeçalho ocupa toda a largura */
+    height: 66px; /* Altura do cabeçalho */
+    z-index: 600; /* Garante que o cabeçalho fique acima de outros elementos */
+}
+
+header .top-bar {
+    display: block; /* Exibe a barra superior como um bloco */
+    background: var(--text-color-black); /* Cor de fundo da barra superior */
+    min-width: 240px; /* Largura mínima da barra */
+    min-height: 66px; /* Altura mínima da barra */
+    position: absolute; /* Posiciona a barra em relação ao cabeçalho */
+    top: 0; /* Alinha a barra ao topo */
+    margin: 10px 0 0 80px; /* Espaçamento interno da barra */
+}
+
+header .logo {
+    float: left; /* Posiciona o logo à esquerda */
+    margin: 9px 10px 20px 70px; /* Margem ao redor do logo */
+    position: absolute; /* Posiciona o logo em relação ao cabeçalho */
+    font-size: 2rem; /* Tamanho da fonte do logo */
+}
+
+header .logo a {
+    display: block; /* Torna o link do logo um bloco clicável */
+    margin: 0; /* Remove margem adicional */
+    padding: 0; /* Remove preenchimento adicional */
+    border: none; /* Remove borda padrão */
+    color: var(--text-color-white); /* Cor do texto do link do logo */
+    text-shadow: none; /* Remove sombra do texto */
+}
+
+.nav-header {
+    display: none; /* Esconde o menu inicialmente */
+    flex-direction: column; /* Organiza os links verticalmente */
+    position: absolute; /* Permite posicionar o menu sobre a página */
+    top: 60px; /* Posiciona o menu logo abaixo do cabeçalho */
+    left: 20px; /* Alinha o menu à direita */
+    background-color: #444; /* Fundo escuro do menu */
+    border-radius: 5px; /* Bordas arredondadas para o menu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+    padding: 1rem; /* Espaçamento interno do menu */
+    z-index: 10; /* Garante que o menu fique sobre outros elementos */
+}
+
+.nav-header a {
+    margin: .5rem 0; /* Espaçamento vertical entre os links */
+    color: var(--text-color-white); /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-size: 1rem; /* Tamanho da fonte dos links */
+}
+
+.hamburger {
+    float: left;
+    display: block; /* Exibe o botão hambúrguer */
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 13px;
+    font-size: 2rem; /* Tamanho do ícone do botão */
+    background: none; /* Remove o fundo padrão */
+    border: none; /* Remove as bordas padrão */
+    color: var(--main-color); /* Cor do botão */
+    cursor: pointer; /* Altera o cursor para indicar interatividade */
+}
+
+.nav-header.active {
+    display: flex; /* Exibe o menu */
+}
+
+.nav-header a:focus-visible,
+.hamburger:focus-visible {
+    outline: 2px solid var(--main-color);
+}
+/* /Header */
+
+/* Home */
+.home{
+    background: #151515 url(img/data.jpg) no-repeat center bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    display: table;
+    position: relative;
+    text-align: center;
+}
+
+.home-content h4{
+    color: var(--main-color);
+    font-size: 1.5rem;
+}
+
+.home-content h1{
+    font-size: 2.5rem;
+}
+
+.home-content p{
+    font-size: 1.5rem;
+}
+/* /Home */
+
+
+/* Estilos para telas menores (responsive design) */
+@media (max-width: 768px) {
+    /* Esconde o menu em telas pequenas */
+    .nav-header {
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 60px; 
+        right: 10px; 
+        background-color: #444; 
+        border-radius: 5px; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+        padding: 1rem; 
+    }
+
+    /* Mostra o botão hambúrguer em telas menores */
+    .hamburger {
+        display: block;
+    }
+
+    /* Exibe o menu ao adicionar a classe active */
+    .nav-header.active {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    header .top-bar {
+        margin: 10px 0 0 10px; /* Ajusta margens para telas menores */
+    }
+    header .logo {
+        font-size: 1.5rem; /* Reduz o tamanho do logo */
+    }
+}
