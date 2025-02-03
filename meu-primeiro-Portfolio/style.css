@@ -4,7 +4,7 @@
     --main-color:#00eeff;
     --text-color-white:#ffffff;
     --text-color-black:#000000;
-    --bg-color-01:#CDCDCD;
+    --bg-color-01:#dfdfdf;
     --color-00:#0000001a;
 
     --color-02:#009539;
@@ -40,7 +40,6 @@ body {
     justify-content: center;
     align-items: center; 
 
-    background-color: var(--bg-color-01); /* Cor de fundo do corpo */
     color: var(--text-color-white); /* Cor do texto principal */
 }
 
@@ -51,16 +50,21 @@ header {
     width: 100%; /* O cabeçalho ocupa toda a largura */
     height: 66px; /* Altura do cabeçalho */
     z-index: 600; /* Garante que o cabeçalho fique acima de outros elementos */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 header .top-bar {
-    display: block; /* Exibe a barra superior como um bloco */
+    display: flex; /* Exibe a barra superior como um bloco */
     background: var(--text-color-black); /* Cor de fundo da barra superior */
     min-width: 240px; /* Largura mínima da barra */
     min-height: 66px; /* Altura mínima da barra */
     position: absolute; /* Posiciona a barra em relação ao cabeçalho */
     top: 0; /* Alinha a barra ao topo */
     margin: 10px 0 0 80px; /* Espaçamento interno da barra */
+    justify-content: space-between;
 }
 
 header .logo {
@@ -130,62 +134,69 @@ header .logo a {
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
+    padding: 5vw;
 }
 
 .home-content{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
 }
 
 .home-content h4{
     color: var(--color-11);
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Ajusta dinamicamente */
 }
 
 .home-content h1{
-    font-size: 3.8rem;
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: bold;
-
-    margin: 10px 0;
 }
 
 .home-content p{
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.3rem);
     margin: 10px 0;
 }
 
 .home-content span{
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--bg-color-01);
 }
 
 .btn a{
     display: inline-block;
     padding: 10px 20px;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     font-weight: bold;
     color: var(--text-color-white);
     background: transparent;
     border: 3px solid var(--color-07);
     border-radius: 20px;
     cursor: pointer;
-    transition: 0.3s ease;
-    
+    transition: 0.3s ease;    
     margin-top: 30px;
 }
 
 .btn:hover a{
-    border: 3px solid var(--color-10);
+    border: 3px solid var(--bg-color-01);
+}
+
+/* Redes sociais responsivas */
+.home .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Espaçamento entre os ícones */
 }
 
 .home .social-media i{
-    font-size: 2.3rem;
+    font-size: clamp(1.8rem, 5vw, 2.3rem);
     margin: 3rem 1rem ;
     color: var(--text-color-white);
     transition: 0.3s ease;
@@ -193,7 +204,7 @@ header .logo a {
 
 .home .social-media i:hover{
     background-color: inherit;
-    color: var(--color-10);
+    color: var(--bg-color-01);
     cursor: pointer;
 }
 /* /Home */
@@ -203,6 +214,7 @@ header .logo a {
     width: 100%;
     height: 100%;
     color: var(--text-color-black);
+    background: var(--text-color-white);
     
     display: flex;
     justify-content: space-between;
@@ -243,7 +255,7 @@ header .logo a {
 }
 
 .box-about .btn a:hover{
-    border: 3px solid var(--main-color);
+    border: 3px solid var(--color-10);
 }
 
 .box-about h4 a{
@@ -332,6 +344,69 @@ header .logo a {
 }
 /* /About */
 
+/* Services */
+.services{
+    background: var(--bg-color-01);
+}
+.services h2,
+.portfolio h2,
+.contact h2{
+    font-size: 2.2rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.services-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.services-container, .services-box{
+    padding: 2rem 1rem 2.5rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: solid 0.15rem var(--bg-color-01);
+    background-color: var(--bg-color-02);
+
+    transition: 0.5s ease;
+    gap: 1rem;
+}
+
+.services-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 25rem;
+    margin-bottom: 1rem;
+}
+
+.services-container, .services-box:hover{
+    border-color: var(--main-color);
+    transform: scale(1.01);
+}
+
+.services-box i{
+    font-size: 4.3rem;
+    color: var(--main-color);
+}
+
+.services-box h3{
+    font-size: 1.5rem;
+}
+
+.services-box p{
+    margin: 0.5rem;
+    letter-spacing: 0.09rem;
+    /* N lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* /Services */
+
 
 /* Estilos para telas menores (responsive design) */
 @media (max-width: 768px) {
@@ -365,5 +440,15 @@ header .logo a {
     }
     header .logo {
         font-size: 1.5rem; /* Reduz o tamanho do logo */
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        padding: 8vw; /* Aumenta o espaçamento em telas menores */
+    }
+    
+    .home-content {
+        max-width: 95%;
     }
 }

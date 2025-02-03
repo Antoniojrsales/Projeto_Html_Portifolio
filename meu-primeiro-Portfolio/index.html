@@ -14,15 +14,15 @@
             <div class="logo">
                 <a href="#">AntonioJr</a>
             </div>
-            <button class="hamburger" id="hamburger">
+            <button class="hamburger" id="hamburger" aria-label="Abrir Menu de Navegação">
                 &#9776;
             </button>
             <nav class="nav-header" id="nav-header">
                 <a href="#home">Início</a>
                 <a href="#about">Sobre</a>
                 <a href="summary">Resumo</a>
-                <a href="portfolio">Portfolio</a>
-                <a href="services">Serviços</a>
+                <a href="project">Projetos</a>
+                <a href="#services">Serviços</a>
                 <a href="contact">Contatos</a>
             </nav>
         </div>
@@ -38,17 +38,17 @@
         </div>
 
         <div class="btn">
-            <a href="#about">Saiba Mais</a>
+            <a href="#about" class="btn" role="button" aria-label="Saiba mais sobre mim">Saiba Mais</a>
         </div>
 
         <div class="social-media">
-            <a href="https://github.com/Antoniojrsales" target="_blank">
+            <a href="https://github.com/Antoniojrsales" target="_blank" aria-label="GitHub de Antonio">
                 <i class="fa-brands fa-square-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/antonio-gomes-31bb18137/" target="_blank">
+            <a href="https://www.linkedin.com/in/antonio-gomes-31bb18137/" target="_blank" aria-label="linkedin de Antonio">
                 <i class="fa-brands fa-linkedin-in"></i>
             </a>
-            <a href="https://www.instagram.com/antoniojrsales/" target="_blank">
+            <a href="https://www.instagram.com/antoniojrsales/" target="_blank" aria-label="instagram de Antonio">
                 <i class="fa-brands fa-instagram"></i>
             </a>
         </div>
@@ -67,10 +67,10 @@
                 <h3>Olá, me chamo</h3>
                 <h2>Antonio Gomes</h2>
                 <h4>
-                        Sou um profissional em transição de carreira da área de Logística/Suprimentos para Tecnologia, com foco em desenvolvimento em Python, Data Science. Iniciei minha jornada com o curso Data Science Infinity School, onde adquiri sólidos fundamentos em Python e aprendi a utilizá-lo para resolver problemas práticos.
+                        Sou um profissional em transição de carreira da área de Logística/Suprimentos para Tecnologia, com foco em desenvolvimento em Python e Data Science. Iniciei minha jornada com o curso Data Science Infinity School, onde adquiri sólidos fundamentos em Python e aprendi a utilizá-lo para resolver problemas práticos.
                         Estou em constante aprendizado, explorando bibliotecas como Pandas e NumPy para análise de dados e TensorFlow para aprendizado de máquina.
                     <br><br>
-                        Atualmente, estou aprofundando meus conhecimentos em Front-End, com ênfase em HTML, CSS e JavaScript, enquanto continuo explorando o potencial do Python e Data Science em projetos diversos. Estou sempre em busca de novos aprendizados e desafios que me permitam crescer como desenvolvedor e contribuir com soluções inovadoras.
+                        Atualmente, estou aprofundando meus conhecimentos em Linguagem R para Data Science e Front-End, com ênfase em HTML, CSS e JavaScript, enquanto continuo explorando o potencial do Python e Data Science em projetos diversos. Estou sempre em busca de novos aprendizados e desafios que me permitam crescer como desenvolvedor e contribuir com soluções inovadoras.
                 </h4>
 
                 <div class="stacks-content">
@@ -119,14 +119,44 @@
 
      </section>
     <!-- /About -->
+
+    <!-- Service section -->
+    <section class="services" id="services">
+        <h2>Nossos <span>Serviços</span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <i class="fa-solid fa-chart-column"></i>
+                <h3>Data Science</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quidem perspiciatis ut dicta mollitia sequi, laudantium at optio aliquid facere error dolor iusto minus nostrum doloremque vitae doloribus culpa aspernatur?</p>
+                <a href="#">Read More</a>
+            </div>
+        
+            <div class="services-box">
+                <i class="fa-brands fa-python"></i>
+                <h3>Back-End Development</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi excepturi minus soluta nisi saepe iusto ipsa dolor veritatis. Nemo veniam in asperiores. Error, debitis alias repellendus minima mollitia fuga natus.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </section>
+    <!-- /Service section -->
 </body>
 <!-- Script JavaScript direto no HTML -->
 <script>
-    const hamburger = document.getElementById('hamburger');
-    const navHeader = document.getElementById('nav-header');
+    document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-header");
 
-    hamburger.addEventListener('click', () => {
-        navHeader.classList.toggle('active');
+    hamburger.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
     });
+
+    // Fecha o menu ao clicar em um link (opcional, útil para mobile)
+    document.querySelectorAll("#nav-header a").forEach(link => {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("active");
+        });
+    });
+});
 </script>
 </html>
