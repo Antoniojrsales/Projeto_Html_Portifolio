@@ -9,14 +9,14 @@
 
     --color-02:#009539;
     --color-03:#471b96;
-    --color-04:#c00000;
+    --color-04:#c0c0c0;
     --color-05:#232323;
     --color-06:#004ea2;
     --color-07:#666;
     --color-08:#060;
     --color-09:#6600ff;
     --color-10:#3333ff;
-    --color-11:#000066;
+    --color-11:#212d80;
 }
 
 *{
@@ -42,7 +42,27 @@ body {
 
     color: var(--text-color-white); /* Cor do texto principal */
 }
+/* /Estilos globais */
 
+/* btn */
+.btn a{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: bold;
+    color: var(--text-color-black);
+    background: transparent;
+    border: 3px solid var(--color-04);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;    
+    margin-top: 30px;
+}
+
+.btn:hover a{
+    border: 3px solid var(--color-07);
+}
+/* /btn */
 
 /* Header */
 header {
@@ -59,19 +79,19 @@ header {
 header .top-bar {
     display: flex; /* Exibe a barra superior como um bloco */
     background: var(--text-color-black); /* Cor de fundo da barra superior */
-    min-width: 240px; /* Largura mínima da barra */
+    min-width: 290px; /* Largura mínima da barra */
     min-height: 66px; /* Altura mínima da barra */
     position: absolute; /* Posiciona a barra em relação ao cabeçalho */
-    top: 0; /* Alinha a barra ao topo */
-    margin: 10px 0 0 80px; /* Espaçamento interno da barra */
+    margin: 20px 0 0 80px; /* Espaçamento interno da barra */
     justify-content: space-between;
 }
 
 header .logo {
     float: left; /* Posiciona o logo à esquerda */
-    margin: 9px 10px 20px 70px; /* Margem ao redor do logo */
+    margin: 10px 10px 20px 45px; /* Margem ao redor do logo */
     position: absolute; /* Posiciona o logo em relação ao cabeçalho */
     font-size: 2rem; /* Tamanho da fonte do logo */
+    z-index: 10;
 }
 
 header .logo a {
@@ -93,7 +113,7 @@ header .logo a {
     border-radius: 5px; /* Bordas arredondadas para o menu */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
     padding: 1rem; /* Espaçamento interno do menu */
-    z-index: 10; /* Garante que o menu fique sobre outros elementos */
+    z-index: 20; /* Garante que o menu fique sobre outros elementos */
 }
 
 .nav-header a {
@@ -101,6 +121,12 @@ header .logo a {
     color: var(--text-color-white); /* Cor do texto dos links */
     text-decoration: none; /* Remove o sublinhado dos links */
     font-size: 1rem; /* Tamanho da fonte dos links */
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.nav-header a:hover {
+    background: var(--color-07);
 }
 
 .hamburger {
@@ -109,13 +135,12 @@ header .logo a {
     width: 40px;
     height: 40px;
     position: relative;
-    margin-left: 20px;
-    margin-top: 13px;
     font-size: 2rem; /* Tamanho do ícone do botão */
     background: none; /* Remove o fundo padrão */
     border: none; /* Remove as bordas padrão */
     color: var(--main-color); /* Cor do botão */
     cursor: pointer; /* Altera o cursor para indicar interatividade */
+    margin-top: 10px;
 }
 
 .nav-header.active {
@@ -140,7 +165,6 @@ header .logo a {
     text-align: center;
     align-items: center;
     flex-direction: column;
-    text-align: center;
     padding: 5vw;
 }
 
@@ -150,8 +174,11 @@ header .logo a {
 }
 
 .home-content h4{
-    color: var(--color-11);
-    font-size: clamp(1.5rem, 4vw, 2rem); /* Ajusta dinamicamente */
+    color: var(--bg-color-01);
+    font-size: clamp(1.8rem, 4vw, 2rem); /* Ajusta dinamicamente */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    letter-spacing: 5px;
+    text-transform: uppercase; /* Deixa o texto em maiúsculas (opcional) */
 }
 
 .home-content h1{
@@ -168,25 +195,13 @@ header .logo a {
     font-weight: bold;
     font-size: 1.5rem;
     color: var(--bg-color-01);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.btn a{
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    font-weight: bold;
+.home .btn a{
     color: var(--text-color-white);
-    background: transparent;
-    border: 3px solid var(--color-07);
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s ease;    
-    margin-top: 30px;
-}
-
-.btn:hover a{
-    border: 3px solid var(--bg-color-01);
-}
+    transition: background-color 0.3s ease, color 0.3s ease;
+} 
 
 /* Redes sociais responsivas */
 .home .social-media {
@@ -204,7 +219,7 @@ header .logo a {
 
 .home .social-media i:hover{
     background-color: inherit;
-    color: var(--bg-color-01);
+    color: var(--color-07);
     cursor: pointer;
 }
 /* /Home */
@@ -236,11 +251,13 @@ header .logo a {
     font-weight: 700;
     line-height: 1.3;
     font-size: 2.7rem;
+    color: var(--color-11);
 }
 
 .box-about h3{
     font-weight: 700;
     font-size: 1.6rem;
+    color: var(--color-11);
 }
 
 .box-about h4{
@@ -248,18 +265,18 @@ header .logo a {
     text-align: justify;
 }
 
-.box-about .btn a{
-    color: var(--text-color-black);
-    background: transparent;
-    border: 3px solid var(--color-05);
-}
-
-.box-about .btn a:hover{
-    border: 3px solid var(--color-10);
-}
-
 .box-about h4 a{
     color: var(--color-10);
+}
+
+.btn-container {
+    display: flex;
+    gap: 20px; /* Espaço entre os botões */
+    margin-top: 20px;
+}
+
+.section-subtitle .btn a{
+    display: inline-block;
 }
 
 .stacks-content{
@@ -271,7 +288,7 @@ header .logo a {
 }
 
 .stacks-content h3{
-    color: var(--text-color-black);
+    color: var(--color-11);
     font-size: 1.7rem;    
 }
 
@@ -312,9 +329,9 @@ header .logo a {
     
     background-color: var(--color-05); /* Fundo do tooltip */
     color: var(--text-color-white); /* Cor do texto */
-    padding: 8px 12px; /* Espaçamento interno */
+    padding: 10px 14px; /* Espaçamento interno */
     border-radius: 4px; /* Bordas arredondadas */
-    font-size: 1rem; /* Tamanho do texto */
+    font-size: .9rem; /* Tamanho do texto */
     white-space: nowrap; /* Evita quebra de linha */
     z-index: 10; /* Garante que fique acima de outros elementos */
     opacity: 0; /* Inicialmente invisível */
@@ -344,33 +361,166 @@ header .logo a {
 }
 /* /About */
 
-/* Services */
-.services{
+/* summary */
+.summary{
+    width: 100%;
+    height: 100%;
+    color: var(--text-color-black);
     background: var(--bg-color-01);
 }
-.services h2,
-.portfolio h2,
-.contact h2{
+/* /summary */
+
+/* === Portfolio === */
+.project{
+    background-color: var(--text-color-white);
+    padding: 2rem; /* Adiciona espaçamento interno */
+    color: var(--text-color-black);
+}
+
+.project h2{
     font-size: 2.2rem;
-    margin-top: 1rem;
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.project span{
+    color: var(--color-10);
+}
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fotos lado a lado, adaptando-se ao tamanho da tela */
+    gap: 1.2rem;
+}
+
+.project-box{
+    position: relative;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 0.6rem var(--bg-color-01);
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Animação ao passar o mouse */
+    display: flex;
+}
+
+.project-box:hover {
+    transform: scale(1.05); /* Destaca a foto ao passar o mouse */
+    
+}
+
+.project-box img{
+    width: 100%;
+    transition: 0.5s ease;
+    object-fit: cover; /* Ajusta a imagem ao contêiner sem distorcer */
+}
+
+.project-box img:hover{
+    transform: scale(1.1);
+}
+
+.project-box .project-layer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(129, 140, 248, 0.7);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 4rem;
+    opacity: 0;
+    transform: translateY(18rem);
+    transition: 0.5s ease;
+    color:var(--text-color-white);
+}
+
+.project-box, .project-layer:hover{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-layer h4{
+    font-size: 1.8rem;
+    margin-top: 7rem;
+    color: #1E3A8A;
+}
+
+.project-layer a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--text-color);
+    border-radius: 50%;
+    margin-top: 3rem;
+}
+
+.project-layer p{
+    /* margin: 0.2rem 0 0 0.5rem; */
+    margin-top: 30px;
+}
+
+.project-layer a i{
+    color: var(--color-10);
+    
+}
+
+.project-layer a span{
+    color: var(--text-color-black);
+    margin-top: .4rem;
+}
+/* === /Portfolio === */
+
+/* Services */
+.services{
+    background: var(--text-color-white);
+    color: var(--text-color-black);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.services h2{
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    text-align: center;
+    color: var(--color-10);
+}
+
+.services h4{
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--text-color-black);
+    margin-bottom: 20px;
+}
+
+.requisit{
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--text-color-black);
+    
 }
 
 .services-container{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 50px;
+    gap: 1rem;
 }
 
 .services-container, .services-box{
     padding: 2rem 1rem 2.5rem;
     border-radius: 1.2rem;
     text-align: center;
-    border: solid 0.15rem var(--bg-color-01);
+    border: solid 0.15rem var(--color-00);
     background-color: var(--bg-color-02);
 
     transition: 0.5s ease;
-    gap: 1rem;
 }
 
 .services-box{
@@ -382,31 +532,150 @@ header .logo a {
 }
 
 .services-container, .services-box:hover{
-    border-color: var(--main-color);
+    border-color: var(--color-07);
     transform: scale(1.01);
 }
 
 .services-box i{
     font-size: 4.3rem;
-    color: var(--main-color);
+    color: var(--color-10);    
 }
 
 .services-box h3{
     font-size: 1.5rem;
 }
 
-.services-box p{
-    margin: 0.5rem;
-    letter-spacing: 0.09rem;
-    /* N lines */
+.service-desc{
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
+    max-height: 9.6rem;
+    transition: max-height 0.3s ease;
+}
+
+.service-desc.expanded {
+    -webkit-line-clamp: unset;
+    max-height: none;
 }
 /* /Services */
 
+/* === Formulario === */
+.contact{
+    background: var(--bg-color-01);
+    text-align: center;
+    padding: 2rem;
+    height: 100%;
+}
+
+.contact h2{
+    color: var(--text-color-black);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contact span{
+    color: var(--color-11);
+}
+
+form{
+    max-width: 45rem;
+    margin: 0.6rem auto;
+    text-align: center;
+    margin-bottom: 2rem;    
+}
+
+form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+form .input-box input, form textarea{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: var(--text-color-black);
+    background-color: var(--text-color-white);
+    border-radius: 0.5rem;
+    margin: 0.4rem 0;
+}
+
+form textarea{
+    resize: none;
+}
+
+.contact-icon-wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 70px;
+
+    color: var(--color-05);
+}
+
+.contact-icon-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 0rem 3rem;
+    padding: 1rem;
+}
+
+.contact-icon{
+    height: 40px;
+    width: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 2rem ;
+
+    background: var(--color-white);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.contact-icon i{
+    font-size: 2rem;
+    color: var(--color-05);
+}
+
+.contact-info span{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.contact-info p{
+    margin: 0.25rem 0rem;
+}
+
+.contact-info a{
+    display: block;
+    margin: 0.25rem 0rem;
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.contact-info a:hover{
+    transition: color .3s ease;
+    color: var(--color-11);
+}
+
+
+/* === /Formulario === */
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    background-color: var(--color-07);
+}
 
 /* Estilos para telas menores (responsive design) */
 @media (max-width: 768px) {
@@ -450,5 +719,17 @@ header .logo a {
     
     .home-content {
         max-width: 95%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .project-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 imagens por linha em telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-container {
+        grid-template-columns: 1fr; /* 1 imagem por linha em telas muito pequenas */
     }
 }

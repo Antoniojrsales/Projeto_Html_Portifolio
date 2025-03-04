@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Primeiro Portfolio</title>
+    <title>AntonioJrSales-Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -12,7 +12,7 @@
     <header>
         <div class="top-bar">
             <div class="logo">
-                <a href="#">AntonioJr</a>
+                <a href="#">AntonioJrSales</a>
             </div>
             <button class="hamburger" id="hamburger" aria-label="Abrir Menu de Navegação">
                 &#9776;
@@ -20,10 +20,10 @@
             <nav class="nav-header" id="nav-header">
                 <a href="#home">Início</a>
                 <a href="#about">Sobre</a>
-                <a href="summary">Resumo</a>
-                <a href="project">Projetos</a>
+                <a href="#summary">Resumo</a>
+                <a href="#project">Projetos</a>
                 <a href="#services">Serviços</a>
-                <a href="contact">Contatos</a>
+                <a href="#contact">Contatos</a>
             </nav>
         </div>
     </header>        
@@ -34,7 +34,7 @@
         <div class="home-content">
             <h4>Portfolio</h4>
             <h1>Antonio Gomes</h1>
-            <p>| Python | Data-Science | Front-End | <span>Development</span> |</p>
+            <p>| Python | Data-Science | Machine Learning | <span>Development</span> |</p>
         </div>
 
         <div class="btn">
@@ -68,8 +68,9 @@
                 <h2>Antonio Gomes</h2>
                 <h4>
                         Sou um profissional em transição de carreira da área de Logística/Suprimentos para Tecnologia, com foco em desenvolvimento em Python e Data Science. Iniciei minha jornada com o curso Data Science Infinity School, onde adquiri sólidos fundamentos em Python e aprendi a utilizá-lo para resolver problemas práticos.
+                        <br><br>
                         Estou em constante aprendizado, explorando bibliotecas como Pandas e NumPy para análise de dados e TensorFlow para aprendizado de máquina.
-                    <br><br>
+                        <br><br>
                         Atualmente, estou aprofundando meus conhecimentos em Linguagem R para Data Science e Front-End, com ênfase em HTML, CSS e JavaScript, enquanto continuo explorando o potencial do Python e Data Science em projetos diversos. Estou sempre em busca de novos aprendizados e desafios que me permitam crescer como desenvolvedor e contribuir com soluções inovadoras.
                 </h4>
 
@@ -111,35 +112,171 @@
 
                 <h4>Abaixo esta o meu <a href="/">curriculo</a> para download</h4>
 
-                <div class="btn">
-                    <a href="/" >Download CV</a>
-                </div>   
+                <div class="btn-container">
+                    <div class="btn">
+                        <a href="#contact" >Entre em Contato</a>
+                    </div>   
+
+                    <div class="btn">
+                        <a href="/" download>Download CV</a>
+                    </div>
+                </div>  
             </div>
         </div>
 
      </section>
     <!-- /About -->
 
+     <!-- summary -->
+    <section class="summary" id="summary">
+        <div class="box-content">
+            <h4>Resumo</h4>
+            <h2>Minhas Qualificações</h2>
+            <p>Um pouco sobre minha tragetória no mundo da programação</p>
+        </div>
+
+        <div class="box-experience">
+            <h3>Formação Acadêmica</h3>
+        </div>
+
+        <div class="box-education">
+            <h3>Cursos e Certificações</h3>
+        </div>
+
+        <div class="box-tecnics">
+            <h3>Competências Técnicas</h3>
+        </div>
+
+        <div class="box-skills">
+            <h3>Soft Skills</h3>
+        </div>
+    </section>
+    <!-- /summary -->
+
+    <!-- Portfolio section -->
+    <section class="project" id="project">
+        <h2>Ultimos <span>Projetos</span></h2>
+        <div class="project-container">
+            <div class="project-box">
+                <img src="img/contrato-eletronico.png" alt="contrato-eletronico.img">
+                <div class="project-layer">
+                    <h4>Projeto Contrato Automatizado em Python</h4>
+                    <p>Script em Python para geração automática de contratos em PDF, com campos dinâmicos e personalizáveis.</p>
+                    <a href="https://github.com/Antoniojrsales/Projetos_Python/blob/main/Contrato/contrato.py" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i><span>Ver Codigo</span></a>
+                </div>
+            </div>
+
+            <div class="project-box">
+                <img src="img/02.jpg" alt="pc.img">
+                <div class="project-layer">
+                    <h4>Data Science</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel minus, dicta illum enim commodi vitae incidunt ullam sequi dolor impedit.</p>
+                    <a href="#" aria-label="Ver mais sobre o projeto de Web Development"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        
+            <div class="project-box">
+                <img src="img/03.jpg" alt="pc.img">
+                <div class="project-layer">
+                    <h4>Front-End</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel minus, dicta illum enim commodi vitae incidunt ullam sequi dolor impedit.</p>
+                    <a href="#" aria-label="Ver mais sobre o projeto de Machine Learning">Sobre<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- /Portfolio section -->
+
     <!-- Service section -->
     <section class="services" id="services">
         <h2>Nossos <span>Serviços</span></h2>
+        <h4>Como posso lhe ajudar?</h4>
+        <p class="requisit">Se você precisa de automação, análise de dados, machine learning e visualizações com Python,</p>
+        <p class="requisit">você está no lugar certo!</p>
         <div class="services-container">
             <div class="services-box">
-                <i class="fa-solid fa-chart-column"></i>
-                <h3>Data Science</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quidem perspiciatis ut dicta mollitia sequi, laudantium at optio aliquid facere error dolor iusto minus nostrum doloremque vitae doloribus culpa aspernatur?</p>
-                <a href="#">Read More</a>
+                <i class="fa-brands fa-python"></i>
+                <h3>Python Development</h3>
+                <p class="service-desc">Desenvolvo soluções eficientes em Python para automação de tarefas, análise de dados e desenvolvimento Back-End. Com foco em otimização e inovação, crio scripts personalizados, APIs e aplicações que transformam dados em decisões estratégicas.</p>
+                <button class="btn-saiba-mais" onclick="toggleText(this)">Saiba Mais</button>
             </div>
         
             <div class="services-box">
-                <i class="fa-brands fa-python"></i>
-                <h3>Back-End Development</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi excepturi minus soluta nisi saepe iusto ipsa dolor veritatis. Nemo veniam in asperiores. Error, debitis alias repellendus minima mollitia fuga natus.</p>
-                <a href="#">Read More</a>
+                <i class="fa-solid fa-chart-column"></i>
+                <h3>Data Science</h3>
+                <p class="service-desc">Transformo dados em insights estratégicos! Com habilidades em Python, Pandas e visualização de dados, realizo coleta, tratamento e análise de informações para embasar decisões assertivas. Do pré-processamento à criação de dashboards interativos, entrego soluções que otimizam processos e impulsionam resultados.</p>
+                <button class="btn-saiba-mais" onclick="toggleText(this)">Saiba Mais</button>
+            </div>
+
+            <div class="services-box">
+                <i class="fa-solid fa-code"></i>
+                <h3>Front-End</h3>
+                <p class="service-desc">Desenvolvo interfaces modernas e responsivas com HTML, CSS e JavaScript. Com foco em experiência do usuário (UX) e design intuitivo, crio sites e aplicações web que combinam estética e performance, garantindo navegabilidade fluida em qualquer dispositivo.</p>
+                <button class="btn-saiba-mais" onclick="toggleText(this)">Saiba Mais</button>
             </div>
         </div>
     </section>
     <!-- /Service section -->
+
+    <!-- Contact section -->
+    <section class="contact" id="contact">
+        <h2>Formulario para<span> Contato</span></h2>
+
+        <form action="" method="post">
+            <div class="input-box">
+                <input type="text" placeholder="Digite seu nome completo" required>
+                <input type="email" placeholder="Digite seu e-mail" required>
+            </div>
+
+            <div class="input-box">
+                <input type="tel" placeholder="N° Telefone Ex:(00) 00000-0000" pattern="\(\d{2}\) \d{5}-\d{4}" required>
+                <input type="text" id="subject" name="subject" placeholder="Digite o assunto" required>
+            </div>
+
+            <textarea id="message" name="message" cols="30" rows="8" placeholder="Mensagem"></textarea>
+
+            <div class="btn">
+                <button type="submit" class="btn">Enviar Mensagem</button>
+            </div>            
+        </form>
+
+        <div class="contact-icon-wrapper">
+            <div class="contact-icon-content">
+                <div class="contact-icon">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div class="contact-info">
+                    <span>Localização</span>
+                    <p>Fortaleza, Ceara</p>
+                </div>
+            </div>
+
+            <div class="contact-icon-content">
+                <div class="contact-icon">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <div class="contact-info">
+                    <span>E-mail</span>
+                    <a href="mailto:antoniogomes.junio@gmail.com">antoniogomes.junio@gmail.com</a>
+                </div>
+            </div>
+            
+            <div class="contact-icon-content">
+                <div class="contact-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="contact-info">
+                    <span>Chamada | Whatsapp</span>
+                    <p>(85) 99200-6309</p>
+                </div>
+            </div>
+     </section>
+     <!-- /Contact section -->
+
+     <footer>
+        <p>Copyright &copy; 2025 by &lt;/AntonioJrSales&gt;. All Rigths Reserved.</p>
+    </footer>
+
 </body>
 <!-- Script JavaScript direto no HTML -->
 <script>
@@ -158,5 +295,17 @@
         });
     });
 });
+
+function toggleText(button) {
+    const desc = button.previousElementSibling;
+
+    if (desc.classList.contains("expanded")) {
+        desc.classList.remove("expanded");
+        button.textContent = "Saiba Mais";
+    } else {
+        desc.classList.add("expanded");
+        button.textContent = "Mostrar Menos";
+    }
+};
 </script>
 </html>
